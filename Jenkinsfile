@@ -21,12 +21,33 @@ pipeline {
     stage('Checkout') {
       steps{
         echo "------------>Checkout<------------"
+		checkout([
+			$class: 'GitSCM', 
+			branches: [[name: '*/master']], 
+			doGenerateSubmoduleConfigurations: false, 
+			extensions: [], 
+			gitTool: 'Default', 
+			submoduleCfg: [], 
+			userRemoteConfigs: [[
+			credentialsId: 'GitHub_ju4nd3r', 
+			url:'https://github.com/ju4nd3r/PagoMatriculas.git'
+			]]
+			])
+
       }
     }
+	
+	stage('Clean project') {
+	 steps {
+	  sh 'gradle --b ./AlquilerVehiculos/build.gradle clean'
+	 }
+	}
     
     stage('Compile & Unit Tests') {
       steps{
         echo "------------>Unit Tests<------------"
+		sh 'gradle --b ./build.gradle test'
+
 
       }
     }
@@ -53,9 +74,11 @@ sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallat
     }
     success {
       echo 'This will run only if successful'
+	  junit 'back/build/test-results/test/*.xml'
     }
     failure {
       echo 'This will run only if failed'
+	  mail (to: 'juan.vasquez@ceiba.com.co',subject: "Failed Pipeline:${currentBuild.fullDisplayName}",body: "Something is wrong with ${env.BUILD_URL}")
     }
     unstable {
       echo 'This will run only if the run was marked as unstable'
