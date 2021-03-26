@@ -39,14 +39,14 @@ pipeline {
 	
 	stage('Clean project') {
 	 steps {
-	  sh 'gradle --b ./AlquilerVehiculos/build.gradle clean'
+	  sh 'gradle --b ./back/build.gradle clean'
 	 }
 	}
     
     stage('Compile & Unit Tests') {
       steps{
         echo "------------>Unit Tests<------------"
-		sh 'gradle --b ./build.gradle test'
+		sh 'gradle --b ./back/build.gradle test'
 
 
       }
@@ -64,6 +64,7 @@ sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallat
     stage('Build') {
       steps {
         echo "------------>Build<------------"
+		sh 'gradle --b ./back/build.gradle build -x test'
       }
     }  
   }
