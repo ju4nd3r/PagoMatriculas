@@ -39,6 +39,7 @@ pipeline {
 	
 	stage('Clean project') {
 	 steps {
+	sh 'chmod +x gradlew'
 	  sh './back/gradlew --b ./back/build.gradle clean'
 	 }
 	}
