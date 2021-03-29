@@ -11,11 +11,11 @@ server:
          timeout: 21600s
 
 spring:
-   datasource:
-      driver-class-name: 
+   datasource: 
+      driver-class-name: org.h2.Driver
       type: com.zaxxer.hikari.HikariDataSource
-      jdbcUrl: 
-      username: 
+      jdbcUrl: jdbc:h2:mem:~/microservicio 
+      username: sa
       password: 
       hikari:
          poolName: pool

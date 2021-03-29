@@ -1,4 +1,4 @@
-rootProject.name = 'Matriculas'
+rootProject.name = 'matriculas'
 
 include ':infraestructura'
 include ':aplicacion'
