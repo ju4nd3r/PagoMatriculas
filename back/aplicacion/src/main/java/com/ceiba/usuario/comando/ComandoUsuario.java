@@ -1,6 +1,5 @@
 package com.ceiba.usuario.comando;
 
-import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,6 +14,5 @@ public class ComandoUsuario{
 
     private Long id;
     private String nombre;
-    private String clave;
-    private LocalDateTime fecha;
+
 }
