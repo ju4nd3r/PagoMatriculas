@@ -1,5 +1,9 @@
 package com.ceiba.configuracion;
 
+import com.ceiba.matricula.puerto.repositorio.RepositorioMatricula;
+import com.ceiba.matricula.servicio.ServicioCrearMatricula;
+import com.ceiba.oferta.academica.puerto.repositorio.RepositorioOfertaAcademica;
+import com.ceiba.oferta.academica.servicio.ServicioCrearOfertaAcademica;
 import com.ceiba.usuario.puerto.repositorio.RepositorioUsuario;
 import com.ceiba.usuario.servicio.ServicioActualizarUsuario;
 import com.ceiba.usuario.servicio.ServicioCrearUsuario;
@@ -25,5 +29,15 @@ public class BeanServicio {
         return new ServicioActualizarUsuario(repositorioUsuario);
     }
 	
-
+    @Bean
+    public ServicioCrearOfertaAcademica servicioCrearOfertaAcademica(RepositorioOfertaAcademica repositorioOfertaAcademica){
+    	return new ServicioCrearOfertaAcademica(repositorioOfertaAcademica);
+    	
+    }
+    
+    @Bean
+    public ServicioCrearMatricula servicioCrearMatricula(RepositorioMatricula repositorioMatricula){
+    	return new ServicioCrearMatricula(repositorioMatricula);
+    			
+    }
 }
