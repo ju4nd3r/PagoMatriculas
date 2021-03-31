@@ -25,9 +25,9 @@ public class ServicioCrearOfertaAcademica {
 	}
 	
 	/**
-	 * Calcula la fecha extraordinaria a partir de la fecha límite de pago
+	 * Calcula la fecha extraordinaria a partir de la fecha limite de pago
 	 * @param fechaLimitePago
-	 * @return la fecha extraordinaria para ser asignada a la oferta académica
+	 * @return la fecha extraordinaria para ser asignada a la oferta academica
 	 */
 	public Date calcularFechaExtraordinaria(Date fechaLimitePago) {
 

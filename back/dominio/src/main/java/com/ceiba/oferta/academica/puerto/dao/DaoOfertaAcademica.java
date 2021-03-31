@@ -7,8 +7,8 @@ import com.ceiba.oferta.academica.modelo.dto.DtoOfertaAcademica;
 public interface DaoOfertaAcademica {
 
 	/**
-     * Permite listar las ofertas académicas
-     * @return las ofertas académicas
+     * Permite listar las ofertas academicas
+     * @return las ofertas academicas
      */
     List<DtoOfertaAcademica> listar();
 }
