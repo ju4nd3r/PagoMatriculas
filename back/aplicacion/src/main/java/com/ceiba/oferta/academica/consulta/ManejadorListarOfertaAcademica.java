@@ -13,7 +13,6 @@ public class ManejadorListarOfertaAcademica {
 	private final DaoOfertaAcademica daoOfertaAcademica;
 
 	public ManejadorListarOfertaAcademica(DaoOfertaAcademica daoOfertaAcademica) {
-		super();
 		this.daoOfertaAcademica = daoOfertaAcademica;
 	}
 	

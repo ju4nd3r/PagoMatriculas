@@ -3,8 +3,10 @@ package com.ceiba.oferta.academica.modelo.entidad;
 import java.util.Date;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
+@Setter
 public class OfertaAcademica {
 	
 	private String nivelAcademico;

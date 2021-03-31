@@ -17,13 +17,10 @@ public class DaoOfertaAcademicaH2 implements DaoOfertaAcademica{
 	@SqlStatement(namespace="oferta_academica", value="listar")
     private static String sqlListar;
 	
-	
 
 	public DaoOfertaAcademicaH2(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
 		this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
 	}
-
-
 
 	@Override
 	public List<DtoOfertaAcademica> listar() {
