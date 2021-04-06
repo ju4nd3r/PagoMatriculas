@@ -23,6 +23,8 @@ public class OfertaAcademicaTestDataBuilder {
 		this.nivelAcademico = "primaria";
 		Calendar calendario = new GregorianCalendar(2021, Calendar.FEBRUARY, 2);
 		this.fechaLimitePago = calendario.getTime();
+		calendario.add(Calendar.DAY_OF_YEAR, 5);
+		this.fechaExtraordinariaPago = calendario.getTime();
 		this.valor = 10000;
 	}
 	

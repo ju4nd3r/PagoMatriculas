@@ -11,7 +11,7 @@ import com.ceiba.oferta.academica.puerto.dao.DaoOfertaAcademica;
 
 public class ServicioCrearMatricula {
 	
-	private static final String FECHA_VENCIDA = "La matricula no se puede efectuar debido a que supera la fecha maxima de pago de la oferta";;
+	private static final String FECHA_VENCIDA = "La matricula no se puede efectuar debido a que supera la fecha maxima de pago de la oferta";
 	private static final int NUMERO_DIAS_ANTES_PARA_APLICAR_DESCUENTO = 10;
 	private static final int PORCENTAJE_DESCUENTO_VALOR_MATRICULA = 20;
 	private static final int PORCENTAJE_AUMENTO_VALOR_MATRICULA_EXTRAORDINARIA = 15;
@@ -38,7 +38,7 @@ public class ServicioCrearMatricula {
 		
 	}
 	
-	public void validarFechaVencimiento( Date fechaExtraordinariaPago ){
+	private void validarFechaVencimiento( Date fechaExtraordinariaPago ){
 		Date hoy = new Date();
 		if(hoy.before(fechaExtraordinariaPago))
 			throw new ExcepcionFechaVencida(FECHA_VENCIDA);
