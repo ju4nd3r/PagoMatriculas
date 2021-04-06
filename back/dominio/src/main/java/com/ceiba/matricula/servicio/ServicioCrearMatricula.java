@@ -29,7 +29,6 @@ public class ServicioCrearMatricula {
 	}
 	
 	public Long ejecutar(Matricula matricula){
-		System.out.println("ofertaAcademicaId: " + matricula.getOfertaAcademicaId());
 		OfertaAcademica ofertaAcademica = daoOfertaAcademica.obtenerPorId(matricula.getOfertaAcademicaId());
 		validarFechaVencimiento(ofertaAcademica.getFechaExtraordinariaPago());
 		
