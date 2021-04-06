@@ -11,7 +11,6 @@ public class Matricula {
 	
 	private Long matriculaId;
 	
-	
 	private Long usuarioId;
 	
 	private Long ofertaAcademicaId;

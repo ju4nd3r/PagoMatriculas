@@ -5,5 +5,5 @@ create table matricula (
  valor double(2) not null,
  primary key (matriculaId),
  foreign key (usuarioId) references usuario(id),
- foreign key (ofertaAcademicaId) references oferta_academica(id)
+ foreign key (ofertaAcademicaId) references OfertaAcademica(ofertaAcademicaId)
 );

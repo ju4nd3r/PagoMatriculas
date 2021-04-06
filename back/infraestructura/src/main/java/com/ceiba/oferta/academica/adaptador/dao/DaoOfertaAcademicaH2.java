@@ -2,6 +2,7 @@ package com.ceiba.oferta.academica.adaptador.dao;
 
 import java.util.List;
 
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Component;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
@@ -15,10 +16,10 @@ public class DaoOfertaAcademicaH2 implements DaoOfertaAcademica{
 	
 	private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 	
-	@SqlStatement(namespace="oferta_academica", value="listar")
+	@SqlStatement(namespace="OfertaAcademica", value="listar")
     private static String sqlListar;
 	
-	@SqlStatement(namespace="oferta_academica", value="obtenerPorId")
+	@SqlStatement(namespace="OfertaAcademica", value="obtenerPorId")
     private static String sqlObtenerPorId;
 	
 
@@ -33,7 +34,9 @@ public class DaoOfertaAcademicaH2 implements DaoOfertaAcademica{
 
 	@Override
 	public OfertaAcademica obtenerPorId(Long ofertaAcademicaId) {
-		return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtenerPorId, new MapeoOfertaAcademicaEntidad()).get(0);
+		MapSqlParameterSource paramSource = new MapSqlParameterSource();
+		paramSource.addValue("ofertaAcademicaId", ofertaAcademicaId);
+		return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerPorId, paramSource, new MapeoOfertaAcademicaEntidad());
 	}
 
 }

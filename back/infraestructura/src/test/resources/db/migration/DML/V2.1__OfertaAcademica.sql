@@ -1,2 +1,2 @@
-insert into oferta_academica (nivel_academico, fecha_limite_pago, fecha_extraordinaria_pago, valor) 
+insert into OfertaAcademica (nivelAcademico, fechaLimitePago, fechaExtraordinariaPago, valor) 
 values ('primaria', PARSEDATETIME('02/02/2021','dd/MM/yyyy'), PARSEDATETIME('08/02/2021','dd/MM/yyyy'), 50000)

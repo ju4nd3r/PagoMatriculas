@@ -1,2 +1,0 @@
-select nivel_academico, fecha_limite_pago, fecha_extraordinaria_pago, valor
-from oferta_academica

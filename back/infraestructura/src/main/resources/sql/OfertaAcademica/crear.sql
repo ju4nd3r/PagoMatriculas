@@ -1,2 +1,2 @@
-insert into oferta_academica (nivel_academico, fecha_limite_pago, fecha_extraordinaria_pago, valor) 
+insert into OfertaAcademica (nivelAcademico, fechaLimitePago, fechaExtraordinariaPago, valor) 
 values (:nivelAcademico, PARSEDATETIME(:fechaLimitePago,'yyyy-MM-dd'), PARSEDATETIME(:fechaExtraordinariaPago,'yyyy-MM-dd'), :valor)

@@ -12,7 +12,7 @@ public class RepositorioOfertaAcademicaH2 implements RepositorioOfertaAcademica{
 
 	private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 	
-	@SqlStatement(namespace="oferta_academica", value="crear")
+	@SqlStatement(namespace="OfertaAcademica", value="crear")
     private static String sqlCrear;
 
 	public RepositorioOfertaAcademicaH2(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
