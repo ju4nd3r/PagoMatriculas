@@ -17,11 +17,11 @@ public class ServicioCrearOfertaAcademica {
 		this.repositorioOfertaAcademica = repositorioOfertaAcademica;
 	}
 	
-	public void ejecutar(OfertaAcademica ofertaAcademica) {
+	public Long ejecutar(OfertaAcademica ofertaAcademica) {
 		Date fechaExtraordinariaPago = calcularFechaExtraordinaria(ofertaAcademica.getFechaLimitePago());
 		ofertaAcademica.setFechaExtraordinariaPago(fechaExtraordinariaPago);
 		
-		this.repositorioOfertaAcademica.crear(ofertaAcademica);
+		return this.repositorioOfertaAcademica.crear(ofertaAcademica);
 	}
 	
 	/**

@@ -9,6 +9,8 @@ import com.ceiba.oferta.academica.modelo.entidad.OfertaAcademica;
 
 public class OfertaAcademicaTestDataBuilder {
 
+	private Long ofertaAcademicaId;
+	
 	private String nivelAcademico;
 
 	private Date fechaLimitePago;
@@ -35,6 +37,6 @@ public class OfertaAcademicaTestDataBuilder {
 	}
 	
 	public OfertaAcademica build(){
-		return new OfertaAcademica(this.nivelAcademico, this.fechaLimitePago, this.fechaExtraordinariaPago, this.valor);
+		return new OfertaAcademica(this.ofertaAcademicaId, this.nivelAcademico, this.fechaLimitePago, this.fechaExtraordinariaPago, this.valor);
 	}
 }

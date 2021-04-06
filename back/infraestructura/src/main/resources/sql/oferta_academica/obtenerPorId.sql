@@ -1,0 +1,1 @@
+select * from oferta_academica where id = :ofertaAcademicaId

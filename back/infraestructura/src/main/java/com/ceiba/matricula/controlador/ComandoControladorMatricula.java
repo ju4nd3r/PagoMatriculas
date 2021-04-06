@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ceiba.ComandoRespuesta;
+import com.ceiba.manejador.ManejadorComandoRespuesta;
 import com.ceiba.matricula.comando.ComandoMatricula;
 import com.ceiba.matricula.comando.manejador.ManejadorCrearMatricula;
 
@@ -15,7 +17,7 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @RequestMapping("/matriculas")
 @Api(tags = { "Controlador comando matriculas"})
-public class ComandoControladorMatricula {
+public class ComandoControladorMatricula{
 
 	private final ManejadorCrearMatricula manejadorCrearMatricula;
 
@@ -27,8 +29,10 @@ public class ComandoControladorMatricula {
 	
 	@PostMapping
     @ApiOperation("Crear Matriculas")
-	public void crear(@RequestBody ComandoMatricula comandoMatricula){
-		this.manejadorCrearMatricula.ejecutar(comandoMatricula);
+	public ComandoRespuesta<Long> crear(@RequestBody ComandoMatricula comandoMatricula){
+		return this.manejadorCrearMatricula.ejecutar(comandoMatricula);
 		
 	}
+
+
 }

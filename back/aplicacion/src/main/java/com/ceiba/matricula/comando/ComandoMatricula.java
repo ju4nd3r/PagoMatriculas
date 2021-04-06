@@ -2,9 +2,6 @@ package com.ceiba.matricula.comando;
 
 
 
-import com.ceiba.oferta.academica.comando.ComandoOfertaAcademica;
-import com.ceiba.usuario.comando.ComandoUsuario;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,9 +13,13 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ComandoMatricula {
 	
-	private ComandoUsuario usuario;
+	private Long matriculaId;
+	
+	private Long usuarioId;
 
-	private ComandoOfertaAcademica ofertaAcademica;
+	private Long ofertaAcademicaId;
+	
+	private double valor;
 	
 
 }

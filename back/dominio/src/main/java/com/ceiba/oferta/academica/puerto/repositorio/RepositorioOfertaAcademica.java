@@ -8,5 +8,5 @@ public interface RepositorioOfertaAcademica {
      * Permite crear una oferta Academica
      * @param ofertaAcademica
      */
-    void crear(OfertaAcademica ofertaAcademica);
+    Long crear(OfertaAcademica ofertaAcademica);
 }

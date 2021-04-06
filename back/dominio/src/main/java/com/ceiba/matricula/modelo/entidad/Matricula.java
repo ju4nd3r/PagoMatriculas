@@ -1,20 +1,28 @@
 package com.ceiba.matricula.modelo.entidad;
 
-import com.ceiba.oferta.academica.modelo.entidad.OfertaAcademica;
-import com.ceiba.usuario.modelo.entidad.Usuario;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
+@Setter
 public class Matricula {
 
-	private Usuario usuario;
 	
-	private OfertaAcademica ofertaAcademica;
+	private Long matriculaId;
+	
+	
+	private Long usuarioId;
+	
+	private Long ofertaAcademicaId;
+	
+	private double valor;
 
-	public Matricula(Usuario usuario, OfertaAcademica ofertaAcademica) {
-		this.usuario = usuario;
-		this.ofertaAcademica = ofertaAcademica;
+	public Matricula(Long matriculaId, Long usuarioId, Long ofertaAcademicaId, double valor) {
+		this.matriculaId = matriculaId;
+		this.usuarioId = usuarioId;
+		this.ofertaAcademicaId = ofertaAcademicaId;
+		this.valor = valor;
 	}
 	
 	

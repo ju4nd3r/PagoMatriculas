@@ -20,8 +20,8 @@ public class RepositorioOfertaAcademicaH2 implements RepositorioOfertaAcademica{
 	}
 
 	@Override
-	public void crear(OfertaAcademica ofertaAcademica) {
-		this.customNamedParameterJdbcTemplate.crear(ofertaAcademica,sqlCrear );
+	public Long crear(OfertaAcademica ofertaAcademica) {
+		return this.customNamedParameterJdbcTemplate.crear(ofertaAcademica, sqlCrear );
 		
 	}
 	

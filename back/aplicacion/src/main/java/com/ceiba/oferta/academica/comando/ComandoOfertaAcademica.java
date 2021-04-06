@@ -13,6 +13,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ComandoOfertaAcademica {
 
+	private Long ofertaAcademicaId;
+	
 	private String nivelAcademico;
 
 	private Date fechaLimitePago;

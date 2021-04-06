@@ -9,7 +9,8 @@ import com.ceiba.oferta.academica.modelo.entidad.OfertaAcademica;
 public class FabricaOfertaAcademica {
 
 	public OfertaAcademica crear(ComandoOfertaAcademica comandoOfertaAcademica){
-		return new OfertaAcademica(comandoOfertaAcademica.getNivelAcademico(),
+		return new OfertaAcademica(comandoOfertaAcademica.getOfertaAcademicaId(),
+				comandoOfertaAcademica.getNivelAcademico(),
 				comandoOfertaAcademica.getFechaLimitePago(), 
 				comandoOfertaAcademica.getFechaExtraordinariaPago(), 
 				comandoOfertaAcademica.getValor());

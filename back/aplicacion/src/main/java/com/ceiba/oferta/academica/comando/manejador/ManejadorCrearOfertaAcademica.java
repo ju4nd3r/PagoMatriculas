@@ -2,13 +2,15 @@ package com.ceiba.oferta.academica.comando.manejador;
 
 import org.springframework.stereotype.Component;
 
+import com.ceiba.ComandoRespuesta;
+import com.ceiba.manejador.ManejadorComandoRespuesta;
 import com.ceiba.oferta.academica.comando.ComandoOfertaAcademica;
 import com.ceiba.oferta.academica.comando.fabrica.FabricaOfertaAcademica;
 import com.ceiba.oferta.academica.modelo.entidad.OfertaAcademica;
 import com.ceiba.oferta.academica.servicio.ServicioCrearOfertaAcademica;
 
 @Component
-public class ManejadorCrearOfertaAcademica {
+public class ManejadorCrearOfertaAcademica implements ManejadorComandoRespuesta<ComandoOfertaAcademica, ComandoRespuesta<Long>>{
 
 	private final FabricaOfertaAcademica fabricaOfertaAcademica;
 	private final ServicioCrearOfertaAcademica servicioCrearOfertaAcademica;
@@ -21,9 +23,9 @@ public class ManejadorCrearOfertaAcademica {
 		this.servicioCrearOfertaAcademica = servicioCrearOfertaAcademica;
 	}
 	
-	public void ejecutar(ComandoOfertaAcademica comandoOfertaAcademica) {
+	public ComandoRespuesta<Long> ejecutar(ComandoOfertaAcademica comandoOfertaAcademica) {
 		OfertaAcademica ofertaAcademica = this.fabricaOfertaAcademica.crear(comandoOfertaAcademica);
-		this.servicioCrearOfertaAcademica.ejecutar(ofertaAcademica);
+		return new ComandoRespuesta<>(this.servicioCrearOfertaAcademica.ejecutar(ofertaAcademica));
 	}
 	
 	

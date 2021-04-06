@@ -1,1 +1,1 @@
-insert into usuario (nombre) values (:nombre)
+insert into usuario (id, nombre) values (:id, :nombre)

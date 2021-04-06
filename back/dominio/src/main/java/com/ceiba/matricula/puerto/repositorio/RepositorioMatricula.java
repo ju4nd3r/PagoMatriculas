@@ -8,5 +8,5 @@ public interface RepositorioMatricula {
      * Permite crear una Matricula
      * @param matricula
      */
-	void crear(Matricula matricula);
+	Long crear(Matricula matricula);
 }

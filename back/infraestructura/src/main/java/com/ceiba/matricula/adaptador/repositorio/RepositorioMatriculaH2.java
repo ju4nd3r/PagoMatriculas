@@ -20,8 +20,8 @@ public class RepositorioMatriculaH2 implements RepositorioMatricula{
 	}
 
 	@Override
-	public void crear(Matricula matricula) {
-		this.customNamedParameterJdbcTemplate.crear(matricula, sqlCrear);
+	public Long crear(Matricula matricula) {
+		return this.customNamedParameterJdbcTemplate.crear(matricula, sqlCrear);
 		
 	}
 	

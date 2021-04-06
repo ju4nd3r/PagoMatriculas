@@ -9,6 +9,8 @@ import lombok.Getter;
 @AllArgsConstructor
 public class DtoOfertaAcademica {
 	
+	private Long ofertaAcademicaId;
+	
 	private String nivelAcademico;
 
 	private Date fechaLimitePago;

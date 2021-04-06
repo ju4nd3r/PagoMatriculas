@@ -9,6 +9,8 @@ import lombok.Setter;
 @Setter
 public class OfertaAcademica {
 	
+	private Long ofertaAcademicaId;
+	
 	private String nivelAcademico;
 
 	private Date fechaLimitePago;
@@ -17,8 +19,9 @@ public class OfertaAcademica {
 	
 	private double valor;
 
-	public OfertaAcademica(String nivelAcademico, Date fechaLimitePago, Date fechaExtraordinariaPago, double valor) {
+	public OfertaAcademica(Long ofertaAcademicaId, String nivelAcademico, Date fechaLimitePago, Date fechaExtraordinariaPago, double valor) {
 
+		this.ofertaAcademicaId = ofertaAcademicaId;
 		this.nivelAcademico = nivelAcademico;
 		this.fechaLimitePago = fechaLimitePago;
 		this.fechaExtraordinariaPago = fechaExtraordinariaPago;

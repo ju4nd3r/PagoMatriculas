@@ -3,6 +3,7 @@ package com.ceiba.oferta.academica.puerto.dao;
 import java.util.List;
 
 import com.ceiba.oferta.academica.modelo.dto.DtoOfertaAcademica;
+import com.ceiba.oferta.academica.modelo.entidad.OfertaAcademica;
 
 public interface DaoOfertaAcademica {
 
@@ -11,4 +12,12 @@ public interface DaoOfertaAcademica {
      * @return las ofertas academicas
      */
     List<DtoOfertaAcademica> listar();
+    
+    
+    /**
+     * Permite obtener una oferta academica por su id
+     * @return la oferta academica
+     */
+    OfertaAcademica obtenerPorId(Long ofertaAcademicaId);
+    
 }

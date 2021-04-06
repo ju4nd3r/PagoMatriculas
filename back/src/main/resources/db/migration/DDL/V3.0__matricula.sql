@@ -1,8 +1,9 @@
 create table matricula (
- id int(11) not null auto_increment,
- id_usuario int(11) not null,
- id_oferta_academica int(11) not null,
- primary key (id),
- foreign key (id_usuario) references usuario(id),
- foreign key (id_oferta_academica) references oferta_academica(id)
+ matriculaId int(11) not null auto_increment,
+ usuarioId int(11) not null,
+ ofertaAcademicaId int(11) not null,
+ valor double(2) not null,
+ primary key (matriculaId),
+ foreign key (usuarioId) references usuario(id),
+ foreign key (ofertaAcademicaId) references oferta_academica(id)
 );

@@ -34,6 +34,6 @@ public class ConsultaControladorOfertaAcademicaTest {
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].nivel_academico", is("primaria")));
+                .andExpect(jsonPath("$[0].nivelAcademico", is("primaria")));
 	}
 }

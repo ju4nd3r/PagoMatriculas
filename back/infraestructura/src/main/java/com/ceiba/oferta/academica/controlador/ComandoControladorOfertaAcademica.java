@@ -1,11 +1,15 @@
 package com.ceiba.oferta.academica.controlador;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ceiba.ComandoRespuesta;
 import com.ceiba.oferta.academica.comando.ComandoOfertaAcademica;
 import com.ceiba.oferta.academica.comando.manejador.ManejadorCrearOfertaAcademica;
 
@@ -27,9 +31,10 @@ public class ComandoControladorOfertaAcademica {
 	
 	@PostMapping
     @ApiOperation("Crear Oferta Academica")
-	public void crear(@RequestBody ComandoOfertaAcademica comandoOfertaAcademica){
-		this.manejadorCrearOfertaAcademica.ejecutar(comandoOfertaAcademica);
+	public ComandoRespuesta<Long> crear(@RequestBody ComandoOfertaAcademica comandoOfertaAcademica){
+		return this.manejadorCrearOfertaAcademica.ejecutar(comandoOfertaAcademica);
 	}
+	
 	
 }
 	

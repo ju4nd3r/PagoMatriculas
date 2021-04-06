@@ -12,13 +12,10 @@ public class FabricaMatricula {
 
 	public Matricula crear(ComandoMatricula comandoMatricula){
 		
-		Usuario usuario = new Usuario(comandoMatricula.getUsuario().getId(), comandoMatricula.getUsuario().getNombre());
-		OfertaAcademica ofertaAcademica = new OfertaAcademica(comandoMatricula.getOfertaAcademica().getNivelAcademico(),
-				comandoMatricula.getOfertaAcademica().getFechaLimitePago(), 
-				comandoMatricula.getOfertaAcademica().getFechaExtraordinariaPago(), 
-				comandoMatricula.getOfertaAcademica().getValor());
 		
-		return new Matricula(usuario, ofertaAcademica);
+		return new Matricula(comandoMatricula.getMatriculaId(),
+				comandoMatricula.getUsuarioId(), comandoMatricula.getOfertaAcademicaId(),
+				comandoMatricula.getValor());
 		
 	}
 }
