@@ -17,6 +17,8 @@ import com.ceiba.oferta.academica.modelo.entidad.OfertaAcademica;
 import com.ceiba.oferta.academica.puerto.dao.DaoOfertaAcademica;
 import com.ceiba.oferta.academica.puerto.repositorio.RepositorioOfertaAcademica;
 import com.ceiba.oferta.academica.servicio.testdatabuilder.OfertaAcademicaTestDataBuilder;
+import com.ceiba.usuario.modelo.entidad.Usuario;
+import com.ceiba.usuario.servicio.testdatabuilder.UsuarioTestDataBuilder;
 
 public class ServicioCrearMatriculaTest {
 
@@ -51,10 +53,12 @@ public class ServicioCrearMatriculaTest {
 		calendario.add(Calendar.DAY_OF_YEAR, 11);
 		
 		OfertaAcademica ofertaAcademica = new OfertaAcademicaTestDataBuilder().conFechaLimitePago(calendario.getTime()).build();
-		Matricula matricula = new MatriculaTestDataBuilder().conOfertaAcademica(ofertaAcademica).build();
+		Usuario usuario = new UsuarioTestDataBuilder().build();
 		
 		//act
-		double valor = matricula.calcularValorMatricula();
+		Matricula matricula = new Matricula(usuario, ofertaAcademica);
+		
+		double valor = matricula.getValor();
 		
 		
 		//assert
@@ -69,14 +73,13 @@ public class ServicioCrearMatriculaTest {
 		calendario.setTime(new Date());
 		calendario.add(Calendar.DAY_OF_YEAR, -2);
 		Date fechaLimitePago = calendario.getTime();
-		calendario.add(Calendar.DAY_OF_YEAR, 5);
-		Date fechaExtraordinariaPago = calendario.getTime();
 		
-		OfertaAcademica ofertaAcademica = new OfertaAcademicaTestDataBuilder().conFechaLimitePago(fechaLimitePago).conFechaExtraordinariaPago(fechaExtraordinariaPago).build();
-		Matricula matricula = new MatriculaTestDataBuilder().conOfertaAcademica(ofertaAcademica).build();
+		OfertaAcademica ofertaAcademica = new OfertaAcademicaTestDataBuilder().conFechaLimitePago(fechaLimitePago).build();
+		Usuario usuario = new UsuarioTestDataBuilder().build();
 		
 		//act
-		double valor = matricula.calcularValorMatricula();
+		Matricula matricula = new Matricula(usuario, ofertaAcademica);
+		double valor = matricula.getValor();
 		
 		
 		//assert
@@ -93,10 +96,11 @@ public class ServicioCrearMatriculaTest {
 		Date fechaLimitePago = calendario.getTime();
 		
 		OfertaAcademica ofertaAcademica = new OfertaAcademicaTestDataBuilder().conFechaLimitePago(fechaLimitePago).build();
-		Matricula matricula = new MatriculaTestDataBuilder().conOfertaAcademica(ofertaAcademica).build();
+		Usuario usuario = new UsuarioTestDataBuilder().build();
 		
 		//act
-		double valor = matricula.calcularValorMatricula();
+		Matricula matricula = new Matricula(usuario, ofertaAcademica);
+		double valor = matricula.getValor();
 		
 		
 		//assert

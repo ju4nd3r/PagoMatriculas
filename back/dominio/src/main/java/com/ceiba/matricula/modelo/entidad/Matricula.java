@@ -12,7 +12,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter
-@Setter
 public class Matricula {
 	
 	private static final String FECHA_VENCIDA = "La matricula no se puede efectuar debido a que supera la fecha maxima de pago de la oferta academica";
@@ -38,7 +37,7 @@ public class Matricula {
 		this.valor = calcularValorMatricula();
 	}
 	
-	public double calcularValorMatricula(){
+	private double calcularValorMatricula(){
 		
 		double valorCalculado = ofertaAcademica.getValor();
 		Date hoy = new Date();
