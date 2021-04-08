@@ -37,9 +37,8 @@ public class BeanServicio {
     }
     
     @Bean
-    public ServicioCrearMatricula servicioCrearMatricula(RepositorioMatricula repositorioMatricula,
-    		DaoOfertaAcademica daoOfertaAcademica){
-    	return new ServicioCrearMatricula(repositorioMatricula, daoOfertaAcademica);
+    public ServicioCrearMatricula servicioCrearMatricula(RepositorioMatricula repositorioMatricula){
+    	return new ServicioCrearMatricula(repositorioMatricula);
     			
     }
 }

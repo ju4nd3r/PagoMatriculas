@@ -1,26 +1,35 @@
 package com.ceiba.matricula.servicio.testdatabuilder;
 
 import com.ceiba.matricula.modelo.entidad.Matricula;
+import com.ceiba.oferta.academica.modelo.entidad.OfertaAcademica;
+import com.ceiba.oferta.academica.servicio.testdatabuilder.OfertaAcademicaTestDataBuilder;
+import com.ceiba.usuario.modelo.entidad.Usuario;
+import com.ceiba.usuario.servicio.testdatabuilder.UsuarioTestDataBuilder;
 
 public class MatriculaTestDataBuilder {
 
 	private Long matriculaId;
 	
-	private Long usuarioId;
+	private Usuario usuario;
 	
-	private Long ofertaAcademicaId;
+	private OfertaAcademica ofertaAcademica;
 	
 	private double valor;
 	
 	
 	public MatriculaTestDataBuilder(){
-		this.usuarioId = 1L;
-		this.ofertaAcademicaId = 1L;
+		this.usuario = new UsuarioTestDataBuilder().build();
+		this.ofertaAcademica =  new OfertaAcademicaTestDataBuilder().build();
 		this.valor = 50000;
 	}
 	
-	public Matricula build(){
-		return new Matricula(this.matriculaId, this.usuarioId, this.ofertaAcademicaId, this.valor);
+	public MatriculaTestDataBuilder conOfertaAcademica(OfertaAcademica ofertaAcademica){
+		this.ofertaAcademica = ofertaAcademica;
+		return this;
+	}
+	
+	public Matricula build() {
+		return new Matricula( this.usuario, this.ofertaAcademica);
 	}
 	
 }

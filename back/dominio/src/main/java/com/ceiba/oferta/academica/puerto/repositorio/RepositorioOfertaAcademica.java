@@ -9,4 +9,10 @@ public interface RepositorioOfertaAcademica {
      * @param ofertaAcademica
      */
     Long crear(OfertaAcademica ofertaAcademica);
+    
+    /**
+     * Permite obtener una oferta academica por su id
+     * @return la oferta academica
+     */
+    OfertaAcademica obtenerPorId(Long ofertaAcademicaId);
 }

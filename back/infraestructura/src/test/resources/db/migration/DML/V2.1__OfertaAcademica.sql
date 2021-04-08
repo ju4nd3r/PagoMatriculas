@@ -1,2 +1,2 @@
 insert into OfertaAcademica (nivelAcademico, fechaLimitePago, fechaExtraordinariaPago, valor) 
-values ('primaria', PARSEDATETIME('02/02/2021','dd/MM/yyyy'), PARSEDATETIME('08/02/2021','dd/MM/yyyy'), 50000)
+values ('primaria', DATEADD(DAY, 1, TODAY), DATEADD(DAY, 1, TODAY), 50000)

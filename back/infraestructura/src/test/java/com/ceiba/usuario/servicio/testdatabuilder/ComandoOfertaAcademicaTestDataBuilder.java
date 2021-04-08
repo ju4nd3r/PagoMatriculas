@@ -9,13 +9,10 @@ import com.ceiba.oferta.academica.comando.ComandoOfertaAcademica;
 
 public class ComandoOfertaAcademicaTestDataBuilder {
 	
-	private Long ofertaAcademicaId;
 	
 	private String nivelAcademico;
 
 	private Date fechaLimitePago;
-	
-	private Date fechaExtraordinariaPago;
 	
 	private double valor;
 	
@@ -30,10 +27,14 @@ public class ComandoOfertaAcademicaTestDataBuilder {
 		return this;
 	}
 	
+	public ComandoOfertaAcademicaTestDataBuilder conValor(double valor){
+		this.valor = valor;
+		return this;
+	}
+	
 	public ComandoOfertaAcademica build(){
-		return new ComandoOfertaAcademica(this.ofertaAcademicaId,
-				this.nivelAcademico, this.fechaLimitePago,
-				this.fechaExtraordinariaPago, this.valor);
+		return new ComandoOfertaAcademica(
+				this.nivelAcademico, this.fechaLimitePago, this.valor);
 	}
 	
 	

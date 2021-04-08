@@ -32,7 +32,7 @@ public class ComandoControladorOfertaAcademicaTest {
     @Test
     public void crear() throws Exception {
     	// arrange
-    	ComandoOfertaAcademica ofertaAcademica = new ComandoOfertaAcademicaTestDataBuilder().build();
+    	ComandoOfertaAcademica ofertaAcademica = new ComandoOfertaAcademicaTestDataBuilder().conValor(50000).build();
     	
     	//act - assert
     	mocMvc.perform(post("/ofertas-academicas")

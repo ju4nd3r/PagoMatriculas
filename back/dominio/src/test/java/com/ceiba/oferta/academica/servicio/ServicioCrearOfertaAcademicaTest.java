@@ -19,12 +19,10 @@ public class ServicioCrearOfertaAcademicaTest {
 	public void validarFechaExtraordinariaTest() {
 		//arrange
 		OfertaAcademica ofertaAcademica = new OfertaAcademicaTestDataBuilder().build();
-		RepositorioOfertaAcademica repositorioOfertaAcademica = Mockito.mock(RepositorioOfertaAcademica.class);
-		ServicioCrearOfertaAcademica servicioCrearOfertaAcademica = new ServicioCrearOfertaAcademica(repositorioOfertaAcademica);
 		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 		
 		//act
-		Date fechaExtraordinaria = servicioCrearOfertaAcademica.calcularFechaExtraordinaria(ofertaAcademica.getFechaLimitePago());
+		Date fechaExtraordinaria = ofertaAcademica.calcularFechaExtraordinaria(ofertaAcademica.getFechaLimitePago());
 
 		//assert
 		assertEquals("08/02/2021", formato.format(fechaExtraordinaria));

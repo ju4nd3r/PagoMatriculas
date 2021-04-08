@@ -35,5 +35,11 @@ public interface RepositorioUsuario {
      * @return si existe o no
      */
     boolean existeExcluyendoId(Long id,String nombre);
+    
+    /**
+     * Permite obtener un  usuario por su id
+     * @return el usuario
+     */
+    Usuario obtenerPorId(Long id);
 
 }

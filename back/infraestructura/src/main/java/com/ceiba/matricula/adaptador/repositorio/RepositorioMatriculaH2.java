@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
+import com.ceiba.matricula.modelo.dto.DtoMatricula;
 import com.ceiba.matricula.modelo.entidad.Matricula;
 import com.ceiba.matricula.puerto.repositorio.RepositorioMatricula;
 
@@ -20,8 +21,8 @@ public class RepositorioMatriculaH2 implements RepositorioMatricula{
 	}
 
 	@Override
-	public Long crear(Matricula matricula) {
-		return this.customNamedParameterJdbcTemplate.crear(matricula, sqlCrear);
+	public Long crear(DtoMatricula dtoMatricula) {
+		return this.customNamedParameterJdbcTemplate.crear(dtoMatricula, sqlCrear);
 		
 	}
 	

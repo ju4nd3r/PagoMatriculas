@@ -12,14 +12,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ComandoOfertaAcademica {
-
-	private Long ofertaAcademicaId;
 	
 	private String nivelAcademico;
 
 	private Date fechaLimitePago;
-	
-	private Date fechaExtraordinariaPago;
 	
 	private double valor;
 }

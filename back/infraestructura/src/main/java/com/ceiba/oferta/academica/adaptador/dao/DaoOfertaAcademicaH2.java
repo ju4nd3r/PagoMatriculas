@@ -19,8 +19,7 @@ public class DaoOfertaAcademicaH2 implements DaoOfertaAcademica{
 	@SqlStatement(namespace="OfertaAcademica", value="listar")
     private static String sqlListar;
 	
-	@SqlStatement(namespace="OfertaAcademica", value="obtenerPorId")
-    private static String sqlObtenerPorId;
+
 	
 
 	public DaoOfertaAcademicaH2(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
@@ -32,11 +31,6 @@ public class DaoOfertaAcademicaH2 implements DaoOfertaAcademica{
 		return  this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoOfertaAcademica());
 	}
 
-	@Override
-	public OfertaAcademica obtenerPorId(Long ofertaAcademicaId) {
-		MapSqlParameterSource paramSource = new MapSqlParameterSource();
-		paramSource.addValue("ofertaAcademicaId", ofertaAcademicaId);
-		return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerPorId, paramSource, new MapeoOfertaAcademicaEntidad());
-	}
+	
 
 }

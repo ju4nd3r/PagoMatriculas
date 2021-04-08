@@ -14,10 +14,6 @@ public interface DaoOfertaAcademica {
     List<DtoOfertaAcademica> listar();
     
     
-    /**
-     * Permite obtener una oferta academica por su id
-     * @return la oferta academica
-     */
-    OfertaAcademica obtenerPorId(Long ofertaAcademicaId);
+    
     
 }

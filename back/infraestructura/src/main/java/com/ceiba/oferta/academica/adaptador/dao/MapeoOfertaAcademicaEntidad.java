@@ -14,12 +14,15 @@ public class MapeoOfertaAcademicaEntidad implements RowMapper<OfertaAcademica>, 
 	@Override
 	public OfertaAcademica mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Long ofertaAcademicaId = rs.getLong("ofertaAcademicaId");
-		String nivelEducativo = rs.getString("nivelAcademico");
+		String nivelAcademico = rs.getString("nivelAcademico");
 		Date fechaLimitePago = rs.getDate("fechaLimitePago");
 		Date fechaExtraordinariaPago = rs.getDate("fechaExtraordinariaPago");
 		double valor = rs.getDouble("valor");
+		OfertaAcademica ofertaAcademica = new OfertaAcademica( nivelAcademico, fechaLimitePago, valor);
+		ofertaAcademica.setFechaExtraordinariaPago(fechaExtraordinariaPago);
+		ofertaAcademica.setOfertaAcademicaId(ofertaAcademicaId);
+		return ofertaAcademica;
 		
-		return new OfertaAcademica(ofertaAcademicaId, nivelEducativo, fechaLimitePago, fechaExtraordinariaPago, valor);
 	}
 
 }

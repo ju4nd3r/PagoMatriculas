@@ -13,13 +13,10 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ComandoMatricula {
 	
-	private Long matriculaId;
 	
 	private Long usuarioId;
 
 	private Long ofertaAcademicaId;
-	
-	private double valor;
 	
 
 }
