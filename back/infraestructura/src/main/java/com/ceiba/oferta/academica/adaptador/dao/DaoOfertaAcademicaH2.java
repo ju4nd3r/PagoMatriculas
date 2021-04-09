@@ -2,13 +2,12 @@ package com.ceiba.oferta.academica.adaptador.dao;
 
 import java.util.List;
 
-import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+
 import org.springframework.stereotype.Component;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ceiba.oferta.academica.modelo.dto.DtoOfertaAcademica;
-import com.ceiba.oferta.academica.modelo.entidad.OfertaAcademica;
 import com.ceiba.oferta.academica.puerto.dao.DaoOfertaAcademica;
 
 @Component

@@ -1,6 +1,6 @@
 package com.ceiba.matricula.puerto.repositorio;
 
-import com.ceiba.matricula.modelo.dto.DtoMatricula;
+import com.ceiba.matricula.modelo.entidad.Matricula;
 
 public interface RepositorioMatricula {
 
@@ -8,7 +8,7 @@ public interface RepositorioMatricula {
      * Permite crear una Matricula
      * @param matricula
      */
-	Long crear(DtoMatricula dtoMatricula);
+	Long crear(Matricula matricula);
 	
 	
 }
