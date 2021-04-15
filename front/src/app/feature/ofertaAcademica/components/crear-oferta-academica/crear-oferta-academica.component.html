@@ -1,0 +1,32 @@
+<h1>Registrar Oferta Academica</h1>
+<h3>Ejemplo validacion de formularios reactivos con directiva</h3>
+<form [formGroup]="ofertaAcademicaForm" (ngSubmit)="crear()">
+  <div class="row">
+    <div class="col-sm-2">
+      <label>Nivel Academico:</label>
+    </div>
+    <div class="col-sm-4">
+      <input validar type="text" id="nivelAcademico" name="nivelAcademico" placeholder="Nivel Academico" class="form-control"
+        formControlName="nivelAcademico">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+      <label>Fecha Limite Pago:</label>
+    </div>
+    <div class="col-sm-4">
+      <input validar type="date" id="fechaLimitePago" name="fechaLimitePago" placeholder="Fecha Limite Pago"
+        class="form-control" formControlName="fechaLimitePago">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+      <label>Valor:</label>
+    </div>
+    <div class="col-sm-4">
+      <input validar type="number" id="valor" name="valor" placeholder="Valor"
+        class="form-control" formControlName="valor">
+    </div>
+  </div>
+  <button type="submit" >Crear Oferta Academica</button>
+</form>
