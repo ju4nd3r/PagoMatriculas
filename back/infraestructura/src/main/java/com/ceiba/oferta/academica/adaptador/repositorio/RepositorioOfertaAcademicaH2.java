@@ -28,6 +28,7 @@ public class RepositorioOfertaAcademicaH2 implements RepositorioOfertaAcademica{
 
 	@Override
 	public Long crear(OfertaAcademica ofertaAcademica) {
+		System.out.println("fecha Oferta academica: "+ofertaAcademica.getFechaLimitePago());
 		return this.customNamedParameterJdbcTemplate.crear(ofertaAcademica, sqlCrear );
 		
 	}

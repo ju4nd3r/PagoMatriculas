@@ -1,9 +1,8 @@
 package com.ceiba.oferta.academica.controlador;
 
-import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +31,7 @@ public class ComandoControladorOfertaAcademica {
 	@PostMapping
     @ApiOperation("Crear Oferta Academica")
 	public ComandoRespuesta<Long> crear(@RequestBody ComandoOfertaAcademica comandoOfertaAcademica){
+		System.out.println("Comando controlador Fecha Limite Pago: " +comandoOfertaAcademica.getFechaLimitePago());
 		return this.manejadorCrearOfertaAcademica.ejecutar(comandoOfertaAcademica);
 	}
 	

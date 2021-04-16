@@ -1,1 +1,29 @@
-<p>crear-matricula works!</p>
+<h1>Registrar Matricula</h1>
+<form [formGroup]="matriculaForm" (ngSubmit)="crear()">
+  <div class="row">
+    <div class="col-sm-2">
+      <label>Matricula:</label>
+    </div>
+    <div class="col-sm-4">
+        <select validar class="form-control"  
+        id="ofertaAcademicaId" 
+        name="ofertaAcademicaId" 
+        *ngFor="let ofertaAcademica of ofertasAcademicas" 
+        formControlName="ofertaAcademicaId">
+
+            <option [value]="ofertaAcademica.ofertaAcademicaId">{{ofertaAcademica.nivelAcademico}} : {{ofertaAcademica.valor |  currency}}</option>
+        </select>
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+      <label>Identificacion Usuario:</label>
+    </div>
+    <div class="col-sm-4">
+      <input validar type="text" id="usuarioId" name="usuarioId" placeholder="Identificacion Usuario" class="form-control"
+        formControlName="usuarioId">
+    </div>
+  </div>
+  <button type="submit" >Registrar Matricula</button>
+</form>

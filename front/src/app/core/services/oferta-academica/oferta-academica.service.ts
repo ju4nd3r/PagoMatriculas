@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '@core-service/http.service';
 import { environment } from 'src/environments/environment';
-import { OfertaAcademica } from '../model/oferta-academica';
+import { OfertaAcademica } from '../../modelo/oferta-academica';
 
 
 @Injectable({

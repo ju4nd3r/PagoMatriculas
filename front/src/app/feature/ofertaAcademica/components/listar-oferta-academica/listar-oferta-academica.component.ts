@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { OfertaAcademicaService } from '../../shared/service/oferta-academica.service';
-import { OfertaAcademica } from '../../shared/model/oferta-academica';
+import { OfertaAcademicaService } from '../../../../core/services/oferta-academica/oferta-academica.service';
+import { OfertaAcademica } from '../../../../core/modelo/oferta-academica';
 
 @Component({
   selector: 'app-listar-oferta-academica',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { OfertaAcademicaService } from '../../shared/service/oferta-academica.service';
+import { OfertaAcademicaService } from '../../../../core/services/oferta-academica/oferta-academica.service';
 
 @Component({
   selector: 'app-crear-oferta-academica',
@@ -21,8 +21,11 @@ export class CrearOfertaAcademicaComponent implements OnInit {
   }
 
   crear() {
-    
-    this.ofertaAcademicaService.guardar(this.ofertaAcademicaForm.value);
+    console.log(this.ofertaAcademicaForm.value);
+    this.ofertaAcademicaService.guardar(this.ofertaAcademicaForm.value).subscribe( id => {
+      alert('Se creó la oferta academica con el id:'+ id);
+      console.log(id);
+    });
   }
 
   private construirFormularioOfertaAcademica() {

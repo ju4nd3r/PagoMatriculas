@@ -4,6 +4,8 @@ import { MatriculaRoutingModule } from './matricula-routing.module';
 import { CrearMatriculaComponent } from './components/crear-matricula/crear-matricula.component';
 import { MatriculaComponent } from './components/matricula/matricula.component';
 
+import { SharedModule } from '@shared/shared.module';
+
 
 
 @NgModule({
@@ -13,6 +15,7 @@ import { MatriculaComponent } from './components/matricula/matricula.component';
     ],
     imports : [
         MatriculaRoutingModule,
+        SharedModule
 
     ],
     providers: []

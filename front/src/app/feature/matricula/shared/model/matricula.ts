@@ -1,9 +1,9 @@
-export class Usuario {
-    id: string;
-    nombre: string;
+export class Matricula {
+    usuarioId: number;
+    ofertaAcademicaId: number;
 
-    constructor(id: string, nombre: string) {
-        this.id = id;
-        this.nombre = nombre;
+    constructor(usuarioId: number, ofertaAcademicaId: number) {
+        this.usuarioId = usuarioId;
+        this.ofertaAcademicaId = ofertaAcademicaId;
     }
 }

@@ -4,7 +4,7 @@ import {CrearOfertaAcademicaComponent} from './components/crear-oferta-academica
 import {ListarOfertaAcademicaComponent} from './components/listar-oferta-academica/listar-oferta-academica.component';
 import {OfertaAcademicaComponent} from './components/oferta-academica/oferta-academica.component';
 import {OfertaAcademicaRoutingModule} from './oferta-academica-routing.module';
-import { OfertaAcademicaService } from './shared/service/oferta-academica.service';
+import { OfertaAcademicaService } from '../../core/services/oferta-academica/oferta-academica.service';
 
 import { SharedModule } from '@shared/shared.module';
 
