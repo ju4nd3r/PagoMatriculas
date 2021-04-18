@@ -10,6 +10,8 @@ import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ceiba.matricula.modelo.dto.DtoMatricula;
 import com.ceiba.matricula.modelo.entidad.Matricula;
 import com.ceiba.matricula.puerto.repositorio.RepositorioMatricula;
+import com.ceiba.oferta.academica.modelo.entidad.OfertaAcademica;
+import com.ceiba.usuario.modelo.entidad.Usuario;
 
 @Repository
 public class RepositorioMatriculaH2 implements RepositorioMatricula{
@@ -18,6 +20,9 @@ public class RepositorioMatriculaH2 implements RepositorioMatricula{
 	
 	@SqlStatement(namespace="matricula", value="crear")
     private static String sqlCrear;
+	
+	@SqlStatement(namespace="matricula", value="existe")
+    private static String sqlExiste;
 
 	public RepositorioMatriculaH2(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
 		this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -35,6 +40,15 @@ public class RepositorioMatriculaH2 implements RepositorioMatricula{
 		
 		return keyHolder.getKey().longValue();
 		
+	}
+
+	@Override
+	public boolean existe(OfertaAcademica ofertaAcademica, Usuario usuario) {
+		MapSqlParameterSource paramSource = new MapSqlParameterSource()
+				.addValue("usuarioId", usuario.getId())
+				.addValue("ofertaAcademicaId", ofertaAcademica.getOfertaAcademicaId());
+		
+		return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste,paramSource, Boolean.class);
 	}
 	
 	
