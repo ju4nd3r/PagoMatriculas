@@ -11,7 +11,7 @@ export class MatriculaService {
   constructor(protected http: HttpService) { }
 
   public guardar(matricula: Matricula) {
-    return this.http.doPost<Matricula, boolean>(`${environment.endpoint}/matriculas`, matricula,
+    return this.http.doPost<Matricula, any>(`${environment.endpoint}/matriculas`, matricula,
                                                 this.http.optsName('Crear Matricula'));
   }
 }

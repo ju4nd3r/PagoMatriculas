@@ -2,16 +2,17 @@
 <form [formGroup]="matriculaForm" (ngSubmit)="crear()">
   <div class="row">
     <div class="col-sm-2">
-      <label>Matricula:</label>
+      <label>Oferta Académica:</label>
     </div>
     <div class="col-sm-4">
         <select validar class="form-control"  
         id="ofertaAcademicaId" 
-        name="ofertaAcademicaId" 
-        *ngFor="let ofertaAcademica of ofertasAcademicas" 
+        name="ofertaAcademicaId"
         formControlName="ofertaAcademicaId">
-
-            <option [value]="ofertaAcademica.ofertaAcademicaId">{{ofertaAcademica.nivelAcademico}} : {{ofertaAcademica.valor |  currency}}</option>
+            <option *ngFor="let ofertaAcademica of ofertasAcademicas"
+             [value]="ofertaAcademica.ofertaAcademicaId">
+             {{ofertaAcademica.nivelAcademico}} : {{ofertaAcademica.valor |  currency}}
+            </option>
         </select>
     </div>
     
@@ -25,5 +26,5 @@
         formControlName="usuarioId">
     </div>
   </div>
-  <button type="submit" >Registrar Matricula</button>
+  <button id="crearMatricula" type="submit" >Registrar Matricula</button>
 </form>

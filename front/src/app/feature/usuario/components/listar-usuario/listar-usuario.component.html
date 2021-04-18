@@ -1,11 +1,8 @@
 <h2>Usuarios</h2>
-<div *ngFor="let usuario of usuarios">
-    <ul>
-        <li>
-            {{usuario.id}}
-        </li>
-        <li>
-            {{usuario.nombre}}
+<div id="usuarios">
+    <ul class="usuarios">
+        <li *ngFor="let usuario of usuarios | async"  >
+            <span>{{usuario.id}}</span> - {{usuario.nombre}}
         </li>
     </ul>
 </div>

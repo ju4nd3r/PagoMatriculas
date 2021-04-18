@@ -13,7 +13,7 @@ export class UsuarioService {
   }
 
   public guardar(usuario: Usuario) {
-    return this.http.doPost<Usuario, number>(`${environment.endpoint}/usuarios`, usuario,
+    return this.http.doPost<Usuario, any>(`${environment.endpoint}/usuarios`, usuario,
                                                 this.http.optsName('Crear Usuario'));
   }
 

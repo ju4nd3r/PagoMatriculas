@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { OfertaAcademicaService } from '../../../../core/services/oferta-academica/oferta-academica.service';
 import { OfertaAcademica } from '../../../../core/modelo/oferta-academica';
 
@@ -9,18 +10,11 @@ import { OfertaAcademica } from '../../../../core/modelo/oferta-academica';
 })
 export class ListarOfertaAcademicaComponent implements OnInit {
 
-  ofertasAcademicas: OfertaAcademica[] = [];
+  ofertasAcademicas: Observable<OfertaAcademica[]>;
   constructor(protected ofertaAcademicaService: OfertaAcademicaService) { }
 
   ngOnInit(): void {
-    this.getOfertasAcademicas();
-  }
-
-  getOfertasAcademicas(){
-    this.ofertaAcademicaService.consultar().subscribe(ofertasAcademicas => {
-      this.ofertasAcademicas = ofertasAcademicas;
-    });
-
+    this.ofertasAcademicas = this.ofertaAcademicaService.consultar();
   }
 
 }

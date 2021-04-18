@@ -17,7 +17,7 @@ export class OfertaAcademicaService {
   }
 
   public guardar(ofertaAcademica: OfertaAcademica) {
-    return this.http.doPost<OfertaAcademica, boolean>(`${environment.endpoint}/ofertas-academicas`, ofertaAcademica,
+    return this.http.doPost<OfertaAcademica, any>(`${environment.endpoint}/ofertas-academicas`, ofertaAcademica,
                                                 this.http.optsName('Crear Oferta Academica'));
   }
 }

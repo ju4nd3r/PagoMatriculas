@@ -1,14 +1,10 @@
 <h2>Ofertas Academicas</h2>
-<div *ngFor="let ofertaAcademica of ofertasAcademicas">
-    <ul>
-        <li>
-            {{ofertaAcademica.nivelAcademico}}
-        </li>
-        <li>
-            {{ofertaAcademica.fechaLimitePago}}
-        </li>
-        <li>
-            {{ofertaAcademica.valor}}
+<div id="ofertas-academicas">
+    <ul class="ofertas-academicas">
+        <li *ngFor="let ofertaAcademica of ofertasAcademicas | async">
+            Nivel Academico: {{ofertaAcademica.nivelAcademico}}, 
+            Fecha Limite de Pago: {{ofertaAcademica.fechaLimitePago}},
+            Valor: {{ofertaAcademica.valor | currency}}
         </li>
     </ul>
 </div>

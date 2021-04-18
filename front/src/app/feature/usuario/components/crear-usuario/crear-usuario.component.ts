@@ -20,9 +20,10 @@ export class CrearUsuarioComponent implements OnInit {
   crear() {
     console.log('clic en el boton de crear');
     console.log(this.usuarioForm.value);
-    this.usuarioService.guardar(this.usuarioForm.value).subscribe( id => {
-      alert('Se creó el usuario con el id:'+ id);
-    });
+    this.usuarioService.guardar(this.usuarioForm.value)
+    .subscribe( () => alert('Se creó el usuario correctamente'),
+    error =>   alert('Ocurrió un error creando el usuario:'+ error.error.mensaje)
+    );
   }
 
   private construirFormularioUsuario() {

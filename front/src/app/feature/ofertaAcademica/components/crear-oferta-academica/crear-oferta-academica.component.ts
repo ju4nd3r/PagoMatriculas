@@ -22,10 +22,11 @@ export class CrearOfertaAcademicaComponent implements OnInit {
 
   crear() {
     console.log(this.ofertaAcademicaForm.value);
-    this.ofertaAcademicaService.guardar(this.ofertaAcademicaForm.value).subscribe( id => {
-      alert('Se creó la oferta academica con el id:'+ id);
-      console.log(id);
-    });
+    this.ofertaAcademicaService.guardar(this.ofertaAcademicaForm.value).subscribe( 
+      () => alert('Se creó la oferta academica correctamente'),
+      error => alert('Ocurrió un error la oferta academica:'+ error.error.mensaje)
+      
+      );
   }
 
   private construirFormularioOfertaAcademica() {

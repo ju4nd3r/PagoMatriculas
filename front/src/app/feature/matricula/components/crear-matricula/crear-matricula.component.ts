@@ -24,10 +24,9 @@ export class CrearMatriculaComponent implements OnInit {
 
   crear() {
     console.log(this.matriculaForm.value);
-    this.matriculaService.guardar(this.matriculaForm.value).subscribe( id => {
-      alert('Se creó la matricula con el id:'+ id);
-      console.log(id);
-    });
+    this.matriculaService.guardar(this.matriculaForm.value).subscribe( 
+      () => alert('Se creó la matricula correctamente'),
+      error => alert('Ocurrió un error creando la matrícula: '+ error.error.mensaje))
   }
 
   getOfertasAcademicas(){
